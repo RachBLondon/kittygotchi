@@ -14,15 +14,15 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .toy-container * {
   position: absolute;
 }
 
 .kitty-cointainer {
-  position: absolute; 
-  width: 100%; 
+  position: absolute;
+  width: 100%;
   text-align: center;
 }
 
@@ -39,7 +39,7 @@
   bottom: 0;
   left: 50%;
   -webkit-transform: translatex(-50%);
-          transform: translatex(-50%);
+  transform: translatex(-50%);
 }
 
 .crack {
@@ -49,9 +49,47 @@
   top: 53%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-clip-path: polygon(3% 5%, 15% 6%, 28% 0, 63% 6%, 80% 0, 100% 9%, 95% 22%, 100% 54%, 95% 73%, 96% 96%, 71% 95%, 47% 100%, 28% 93%, 12% 99%, 0% 90%, 6% 76%, 0 57%, 5% 28%);
-          clip-path: polygon(3% 5%, 15% 6%, 28% 0, 63% 6%, 80% 0, 100% 9%, 95% 22%, 100% 54%, 95% 73%, 96% 96%, 71% 95%, 47% 100%, 28% 93%, 12% 99%, 0% 90%, 6% 76%, 0 57%, 5% 28%);
+  transform: translate(-50%, -50%);
+  -webkit-clip-path: polygon(
+    3% 5%,
+    15% 6%,
+    28% 0,
+    63% 6%,
+    80% 0,
+    100% 9%,
+    95% 22%,
+    100% 54%,
+    95% 73%,
+    96% 96%,
+    71% 95%,
+    47% 100%,
+    28% 93%,
+    12% 99%,
+    0% 90%,
+    6% 76%,
+    0 57%,
+    5% 28%
+  );
+  clip-path: polygon(
+    3% 5%,
+    15% 6%,
+    28% 0,
+    63% 6%,
+    80% 0,
+    100% 9%,
+    95% 22%,
+    100% 54%,
+    95% 73%,
+    96% 96%,
+    71% 95%,
+    47% 100%,
+    28% 93%,
+    12% 99%,
+    0% 90%,
+    6% 76%,
+    0 57%,
+    5% 28%
+  );
 }
 
 .display {
@@ -61,7 +99,7 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 1vh;
 }
 
@@ -93,5 +131,72 @@
   border-radius: 50%;
   left: 50%;
   -webkit-transform: translatex(-50%);
-          transform: translatex(-50%);
+  transform: translatex(-50%);
+}
+
+@media screen and (min-width: 525px) {
+  .egg {
+    width: 68vw;
+  }
+  .toy-button {
+    width: 4.8vw;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .egg {
+    width: 57vw;
+  }
+
+  .crack {
+    width: 34vw;
+    height: 28vh;
+  }
+
+  .display {
+    width: 27vw;
+    height: 21vh;
+  }
+}
+
+@media screen and (min-width: 761px) {
+  .egg {
+    width: 49vw;
+  }
+  .crack {
+    width: 26vw;
+    height: 28vh;
+  }
+
+  .display {
+    width: 21vw;
+    height: 21vh;
+  }
+
+  .toy-button {
+    width: 4vw;
+  }
+
+  .loop {
+    border: 20px #478bed solid
+  }
+}
+
+
+@media screen and (min-width: 884px){
+  .egg{
+    width: 364px;
+  }
+  .crack{
+    width: 200px;
+    height: 186px;
+  }
+  .display{
+    width: 163px;
+    height: 148px;
+  }
+  .toy-button{
+    width: 31px;
+    height: 31px;
+  }
 }
