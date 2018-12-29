@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import Logo from './../assets/Kittygotchi.png';
 
 export default class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          Navbar
+        <a className="navbar-brand" href="#" style={{fontFamily :"Fredoka One"}}>
+          Kittygotchi
         </a>
+        {/* <img src={Logo}/> */}
         {this.props.metaMask.installed && (
               <h1
                 className="btn btn-outline-success my-2 my-sm-0 ml-auto"

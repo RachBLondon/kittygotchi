@@ -1,32 +1,97 @@
-.App {
+.toy-body {
+  margin: 0;
+  padding: 0;
+  height: 78vh;
+  width: 100vw;
+  background: #efe5bf;
+  position: absolute;
+}
+
+.toy-container {
+  width: 0vw;
+  height: 69vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.toy-container * {
+  position: absolute;
+}
+
+.kitty-cointainer {
+  position: absolute; 
+  width: 100%; 
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.kitty {
+  width: 208px;
+  margin-top: 29vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.egg {
+  background: #478bed;
+  width: 74vw;
+  height: 62vh;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
 }
 
-.App-link {
-  color: #61dafb;
+.crack {
+  background: #ffc02d;
+  width: 40vw;
+  height: 28vh;
+  top: 53%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-clip-path: polygon(3% 5%, 15% 6%, 28% 0, 63% 6%, 80% 0, 100% 9%, 95% 22%, 100% 54%, 95% 73%, 96% 96%, 71% 95%, 47% 100%, 28% 93%, 12% 99%, 0% 90%, 6% 76%, 0 57%, 5% 28%);
+          clip-path: polygon(3% 5%, 15% 6%, 28% 0, 63% 6%, 80% 0, 100% 9%, 95% 22%, 100% 54%, 95% 73%, 96% 96%, 71% 95%, 47% 100%, 28% 93%, 12% 99%, 0% 90%, 6% 76%, 0 57%, 5% 28%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display {
+  background: #dde2b1;
+  width: 31vw;
+  height: 22vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 1vh;
+}
+
+.toy-buttons {
+  width: 100%;
+  text-align: center;
+  top: 80%;
+}
+
+.toy-button {
+  display: inline-block;
+  position: relative;
+  background: #ffc02d;
+  width: 6.8vw;
+  height: 4vh;
+  border-radius: 50%;
+}
+.toy-button:not(:last-child) {
+  margin-right: 4.5vh;
+}
+.toy-button:nth-child(2) {
+  top: 2vh;
+}
+
+.loop {
+  width: 3vw;
+  height: 3vh;
+  border: 2vh #478bed solid;
+  border-radius: 50%;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
 }

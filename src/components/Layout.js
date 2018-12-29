@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
+import Splash from './Splash';
 
 class Layout extends Component {
   render() {
@@ -9,8 +10,9 @@ class Layout extends Component {
           metaMask={this.props.metaMask}
           requestMetaMaskInfo={this.props.requestMetaMaskInfo}
         />
-        <div className="container">
-          {this.props.metaMask.notInstalled && <h1>Please Install MetaMask</h1>}
+        <div>
+            <Splash />
+          {/* {this.props.metaMask.notInstalled && <h1>Please Install MetaMask</h1>}
           {this.props.metaMask.installed && (
             <h1>
               Has Meta Mask
@@ -22,7 +24,7 @@ class Layout extends Component {
           )}
           {this.props.metaMask.isEmptyAccounstArray && (
             <p>You might need to login to MetaMask and try again</p>
-          )}
+          )} */}
         </div>
       </div>
     );
