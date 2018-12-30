@@ -260,6 +260,10 @@
     width: 27vw;
     height: 21vh;
   }
+
+  .kitty {
+    width: 200px;
+  }
 }
 
 @media screen and (min-width: 761px) {
@@ -283,6 +287,7 @@
   .loop {
     border: 20px #478bed solid;
   }
+
 }
 
 @media screen and (min-width: 884px) {
@@ -305,7 +310,4 @@
     width: 100px;
   }
 
-  .kitty {
-    width: 200px;
-  }
 }
