@@ -30,7 +30,7 @@ class Layout extends Component {
             <p>You might need to login to MetaMask and try again</p>
           )} */}
         </div>
-        <h1 className="tagline">Turn your cryptokitty in your digital pet</h1>
+        {/* <h1 className="tagline">Turn your cryptokitty in your digital pet</h1> */}
       </div>
     );
   }
