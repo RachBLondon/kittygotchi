@@ -44,12 +44,12 @@ export default class CatFood extends Component {
                 this.props.feedingKitty.pourFood ? { display: "block" } : {}
               }
             />
-            <div
+            {/* <div
               className="drop"
               style={
                 this.props.feedingKitty.pourFood ? { display: "block" } : {}
               }
-            />
+            /> */}
           </div>
         </div>
       </div>
