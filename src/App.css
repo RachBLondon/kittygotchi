@@ -146,7 +146,7 @@
 
 .catfood {
   position: absolute;
-  width: 100px;
+  width: 75px;
   left: 52vw;
   width: 100px;
   top: 20vh;
@@ -299,5 +299,12 @@
   .toy-button {
     width: 31px;
     height: 31px;
+  }
+  .catfood {
+    width: 100px;
+  }
+
+  .kitty {
+    width: 200px;
   }
 }
