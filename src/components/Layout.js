@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
-import Splash from './Splash';
+import Splash from "./Splash";
 
 class Layout extends Component {
   render() {
@@ -11,8 +11,11 @@ class Layout extends Component {
           requestMetaMaskInfo={this.props.requestMetaMaskInfo}
         />
         <div>
-            <Splash />
-           
+          <Splash
+            feedKitty={this.props.feedKitty}
+            feedingKitty={this.props.feedingKitty}
+          />
+
           {/* {this.props.metaMask.notInstalled && <h1>Please Install MetaMask</h1>}
           {this.props.metaMask.installed && (
             <h1>
@@ -28,7 +31,6 @@ class Layout extends Component {
           )} */}
         </div>
         <h1 className="tagline">Turn your cryptokitty in your digital pet</h1>
-
       </div>
     );
   }

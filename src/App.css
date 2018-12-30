@@ -124,6 +124,10 @@
   top: 2vh;
 }
 
+.toy-button:hover{
+  background: darkorange;
+}
+
 .loop {
   width: 3vw;
   height: 3vh;
@@ -147,16 +151,17 @@
   width: 100px;
   top: 20vh;
   transform: rotate(-40deg);
-  -webkit-transition-property: transform; /* Safari */
+  -webkit-transition-property: transform, opacity; /* Safari */
   -webkit-transition-duration: 2s; /* Safari */
-  transition-property: transform;
+  transition-property: transform, opacity;
   transition-duration: 1s;
+  opacity: 0;
 }
 
-.catfood:hover {
+/* .catfood:hover {
 
   transform: rotate(-90deg);
-}
+} */
 
 
 @media screen and (min-width: 525px) {

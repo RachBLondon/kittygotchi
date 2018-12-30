@@ -6,7 +6,8 @@ import Layout from './components/Layout'
 class App extends Component {
   state = {
     metaMask: { notInstalled: true, installed: false, accounts: "" },
-    web3: ""
+    web3: "",
+    feedingKitty :  {started :false, shakeFood : true}
   };
 
   componentDidMount() {
@@ -28,12 +29,21 @@ class App extends Component {
     }
   };
 
+  feedKitty= ()=> {
+    console.log("in feedkitty")
+    this.setState({feedingKitty : {started : true}})
+
+    setTimeout(()=>(this.setState({feedingKitty : {}})),2000)
+  };
+
   render() {
     return (
       <div className="App">
         <Layout
           metaMask={this.state.metaMask}
           requestMetaMaskInfo={this.requestMetaMaskInfo}
+          feedKitty={this.feedKitty}
+          feedingKitty={this.state.feedingKitty}
           />
           <h1>Make your kitty your pet.</h1>
       </div>

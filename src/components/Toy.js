@@ -8,13 +8,12 @@ export default class Toy extends Component {
           <div className="loop" />
           <div className="egg">
             <div className="crack">
-              <div className="display">
-              </div>
+              <div className="display" />
             </div>
             <div className="toy-buttons">
               <div className="toy-button" />
               <div className="toy-button" />
-              <div className="toy-button" />
+              <div className="toy-button" onClick={this.props.feedKitty} />
             </div>
           </div>
         </div>
