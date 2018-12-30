@@ -4,7 +4,8 @@ import YellowCat from "./../assets/yellow-cat.svg";
 import PinkBackground from './../assets/background-pink.png';
 import back9 from './../assets/9.png';
 import back10 from './../assets/10.png';
-import Toy from './Toy'
+import Toy from './Toy';
+import CatFood from './../assets/catfood.png';
 
 export default class Splash extends Component {
   render() {
@@ -17,6 +18,7 @@ export default class Splash extends Component {
           src={YellowCat}
           className="kitty"
         />
+        <img className="catfood" src={CatFood}/>
         </div>
       </div>
     );

@@ -35,6 +35,7 @@ class App extends Component {
           metaMask={this.state.metaMask}
           requestMetaMaskInfo={this.requestMetaMaskInfo}
           />
+          <h1>Make your kitty your pet.</h1>
       </div>
     );
   }

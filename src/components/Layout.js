@@ -12,6 +12,7 @@ class Layout extends Component {
         />
         <div>
             <Splash />
+           
           {/* {this.props.metaMask.notInstalled && <h1>Please Install MetaMask</h1>}
           {this.props.metaMask.installed && (
             <h1>
@@ -26,6 +27,8 @@ class Layout extends Component {
             <p>You might need to login to MetaMask and try again</p>
           )} */}
         </div>
+        <h1 className="tagline">Turn your cryptokitty in your digital pet</h1>
+
       </div>
     );
   }
