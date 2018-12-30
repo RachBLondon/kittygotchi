@@ -32,8 +32,9 @@ class App extends Component {
   feedKitty= ()=> {
     console.log("in feedkitty")
     this.setState({feedingKitty : {started : true}})
+    setTimeout(()=>(this.setState({feedingKitty : {pourFood : true, started :true}})),1000)
 
-    setTimeout(()=>(this.setState({feedingKitty : {}})),2000)
+    setTimeout(()=>(this.setState({feedingKitty : {}})),2500)
   };
 
   render() {
