@@ -5,16 +5,23 @@ import PinkBackground from "./../assets/background-pink.png";
 import back9 from "./../assets/9.png";
 import back10 from "./../assets/10.png";
 import Toy from "./Toy";
-import CatFood from './CatFood';
+import CatFood from "./CatFood";
 
 export default class Splash extends Component {
   render() {
     return (
       <div style={{ position: "relative" }}>
-        <Toy feedKitty={this.props.feedKitty} />
+        <Toy
+          feedKitty={this.props.feedKitty}
+          moveKittyLeft={this.props.moveKittyLeft}
+          moveKittyRight={this.props.moveKittyRight}
+        />
         <div className="kitty-cointainer">
-          <img src={YellowCat} className="kitty" />
-            <CatFood feedingKitty={this.props.feedingKitty}/>
+          <img src={YellowCat} className="kitty" style={{marginRight: `${this.props.kittyPosition}vw`}}/>
+          <CatFood
+            feedingKitty={this.props.feedingKitty}
+            
+          />
         </div>
       </div>
     );

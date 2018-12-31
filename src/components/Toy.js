@@ -11,9 +11,9 @@ export default class Toy extends Component {
               <div className="display" />
             </div>
             <div className="toy-buttons">
-              <div className="toy-button" />
-              <div className="toy-button" />
-              <div className="toy-button" onClick={this.props.feedKitty} />
+              <div className="toy-button" onClick={this.props.moveKittyLeft}/>
+              <div className="toy-button" onClick={this.props.feedKitty}/>
+              <div className="toy-button" onClick={this.props.moveKittyRight} />
             </div>
           </div>
         </div>

@@ -14,6 +14,9 @@ class Layout extends Component {
           <Splash
             feedKitty={this.props.feedKitty}
             feedingKitty={this.props.feedingKitty}
+            moveKittyLeft={this.props.moveKittyLeft}
+            moveKittyRight={this.props.moveKittyRight}
+            kittyPosition={this.props.kittyPosition}
           />
 
           {/* {this.props.metaMask.notInstalled && <h1>Please Install MetaMask</h1>}

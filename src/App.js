@@ -7,7 +7,8 @@ class App extends Component {
   state = {
     metaMask: { notInstalled: true, installed: false, accounts: "" },
     web3: "",
-    feedingKitty :  {started :false, shakeFood : true}
+    feedingKitty :  {started :false, shakeFood : true},
+    kittyPosition : 0
   };
 
   componentDidMount() {
@@ -37,6 +38,15 @@ class App extends Component {
     setTimeout(()=>(this.setState({feedingKitty : {}})),2500)
   };
 
+  moveKittyLeft= ()=>{
+    this.setState({kittyPosition : this.state.kittyPosition + 1});
+  }
+
+  moveKittyRight= ()=>{
+    this.setState({kittyPosition : this.state.kittyPosition - 1});
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -45,6 +55,10 @@ class App extends Component {
           requestMetaMaskInfo={this.requestMetaMaskInfo}
           feedKitty={this.feedKitty}
           feedingKitty={this.state.feedingKitty}
+          moveKittyLeft={this.moveKittyLeft}
+          moveKittyRight={this.moveKittyRight}
+          kittyPosition={this.state.kittyPosition}
+          //TODO pass down kittyPosition state to add vw margin to kitty element
           />
           <h1>Make your kitty your pet.</h1>
       </div>
