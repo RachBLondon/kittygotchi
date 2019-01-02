@@ -7,7 +7,7 @@ export default class Game extends Component {
   render() {
     return (
       <div style={{ position: "relative", color : "#484848" }}>
-        <div style={{ position: "absolute", zIndex: "1", margin: "1.5rem 1rem", fontFamily : 'VT323' }}>
+        <div style={{ position: "absolute", zIndex: "1", margin: "2rem 1rem", fontFamily : 'VT323' }}>
         <h3>Hungry : {this.props.gameDemoStats.hungry ? 'Yes! 😾' : "I'm full 😸"} </h3>
 
           <h3>Food stock: {this.props.gameDemoStats.foodStock}</h3>

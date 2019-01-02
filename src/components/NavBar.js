@@ -8,7 +8,7 @@ export default class NavBar extends Component {
         <a
           className="navbar-brand"
           href="#"
-          style={{ fontFamily: 'Galano', fontWeight: "900", fontSize: "6vh" }}
+          style={{ fontFamily: 'Fredoka One',  fontSize: "6vh" }}
         >
           Kittygotchi
         </a>
