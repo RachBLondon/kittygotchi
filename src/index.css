@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'Galano';
+  src:  url('./assets/galanogrotesquealtdemo-bold-webfont.woff2') format('woff2'),
+        url('./assets/galanogrotesquealtdemo-bold-webfont.woff') format('woff');
+}

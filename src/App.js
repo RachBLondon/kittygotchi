@@ -8,7 +8,13 @@ class App extends Component {
     metaMask: { notInstalled: true, installed: false, accounts: "" },
     web3: "",
     feedingKitty: { started: false, shakeFood: true },
-    kittyPosition: 0
+    kittyPosition: 0,
+    gameDemoStats: {
+      foodStock: 0,
+      age: 0,
+      plays: 0,
+      hungry : true
+    }
   };
 
   componentDidMount() {
@@ -35,8 +41,10 @@ class App extends Component {
       () => this.setState({ feedingKitty: { pourFood: true, started: true } }),
       1000
     );
+    const kittyHasEaten = Object.assign(this.state.gameDemoStats, {hungry : false})
 
     setTimeout(() => this.setState({ feedingKitty: {} }), 2500);
+    setTimeout(()=> this.setState({gameDemoStats : kittyHasEaten}),8000)
   };
 
   moveKittyLeft = () => {
@@ -68,6 +76,7 @@ class App extends Component {
           moveKittyLeft={this.moveKittyLeft}
           moveKittyRight={this.moveKittyRight}
           kittyPosition={this.state.kittyPosition}
+          gameDemoStats={this.state.gameDemoStats}
         />
         <h1>Make your kitty your pet.</h1>
       </div>
