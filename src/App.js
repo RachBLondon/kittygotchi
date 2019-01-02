@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import Web3 from "web3";
-import Layout from './components/Layout'
+import Layout from "./components/Layout";
 
 class App extends Component {
   state = {
     metaMask: { notInstalled: true, installed: false, accounts: "" },
     web3: "",
-    feedingKitty :  {started :false, shakeFood : true},
-    kittyPosition : 0
+    feedingKitty: { started: false, shakeFood: true },
+    kittyPosition: 0
   };
 
   componentDidMount() {
@@ -21,31 +21,41 @@ class App extends Component {
   }
 
   requestMetaMaskInfo = async event => {
-    console.log("value :", this.state.web3.eth.getAccounts());
     if (window.ethereum) {
       const enable = await window.ethereum.enable().then(console.log);
       const accounts = await this.state.web3.eth.getAccounts();
       const isEmptyAccounstArray = accounts == false;
-      this.setState({metaMask: { accounts, isEmptyAccounstArray }});
+      this.setState({ metaMask: { accounts, isEmptyAccounstArray } });
     }
   };
 
-  feedKitty= ()=> {
-    console.log("in feedkitty")
-    this.setState({feedingKitty : {started : true}})
-    setTimeout(()=>(this.setState({feedingKitty : {pourFood : true, started :true}})),1000)
+  feedKitty = () => {
+    this.setState({ feedingKitty: { started: true } });
+    setTimeout(
+      () => this.setState({ feedingKitty: { pourFood: true, started: true } }),
+      1000
+    );
 
-    setTimeout(()=>(this.setState({feedingKitty : {}})),2500)
+    setTimeout(() => this.setState({ feedingKitty: {} }), 2500);
   };
 
-  moveKittyLeft= ()=>{
-    this.setState({kittyPosition : this.state.kittyPosition + 1});
-  }
+  moveKittyLeft = () => {
+    this.setState({
+      kittyPosition:
+        this.state.kittyPosition < 5
+          ? this.state.kittyPosition + 1
+          : this.state.kittyPosition
+    });
+  };
 
-  moveKittyRight= ()=>{
-    this.setState({kittyPosition : this.state.kittyPosition - 1});
-  }
-
+  moveKittyRight = () => {
+    this.setState({
+      kittyPosition:
+        this.state.kittyPosition > -9
+          ? this.state.kittyPosition - 1
+          : this.state.kittyPosition
+    });
+  };
 
   render() {
     return (
@@ -58,9 +68,8 @@ class App extends Component {
           moveKittyLeft={this.moveKittyLeft}
           moveKittyRight={this.moveKittyRight}
           kittyPosition={this.state.kittyPosition}
-          //TODO pass down kittyPosition state to add vw margin to kitty element
-          />
-          <h1>Make your kitty your pet.</h1>
+        />
+        <h1>Make your kitty your pet.</h1>
       </div>
     );
   }
