@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Logo from "./../assets/Kittygotchi.png";
 
 export default class NavBar extends Component {
   render() {
@@ -12,7 +11,6 @@ export default class NavBar extends Component {
         >
           Kittygotchi
         </a>
-        {/* <img src={Logo}/> */}
         {this.props.metaMask.installed && (
           <h1
             className="btn btn-outline-success my-2 my-sm-0 ml-auto"

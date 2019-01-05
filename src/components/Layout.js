@@ -18,6 +18,7 @@ class Layout extends Component {
             moveKittyRight={this.props.moveKittyRight}
             kittyPosition={this.props.kittyPosition}
             gameDemoStats={this.props.gameDemoStats}
+            buyFood={this.props.buyFood}
           />
         </div>
       </div>

@@ -37,7 +37,7 @@ export default class Game extends Component {
             margin: "2vh"
           }}
         >
-          <button className="btn btn-outline-success">Buy food</button>
+          <button onClick={this.props.buyFood} className="btn btn-outline-success">Buy food</button>
         </div>
         <Toy
           feedKitty={this.props.feedKitty}

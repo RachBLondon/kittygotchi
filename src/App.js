@@ -13,7 +13,7 @@ class App extends Component {
       foodStock: 0,
       age: 0,
       plays: 0,
-      hungry : true
+      hungry: true
     }
   };
 
@@ -35,16 +35,23 @@ class App extends Component {
     }
   };
 
-  feedKitty = () => {
+  //TODO switch setTimeouts to use call backs
+  feedKitty = async () => {
+    const newFoodLevel = Object.assign(this.state.gameDemoStats, {}, {foodStock : this.state.gameDemoStats.foodStock - 1})
     this.setState({ feedingKitty: { started: true } });
     setTimeout(
-      () => this.setState({ feedingKitty: { pourFood: true, started: true } }),
+      () => this.setState({ feedingKitty: { pourFood: true, started: true }, gameDemoStats : newFoodLevel }),
       1000
     );
-    const kittyHasEaten = Object.assign(this.state.gameDemoStats, {hungry : false})
+    const kittyHasEaten = Object.assign(this.state.gameDemoStats, {
+      hungry: false
+    });
 
     setTimeout(() => this.setState({ feedingKitty: {} }), 2500);
-    setTimeout(()=> this.setState({gameDemoStats : kittyHasEaten}),8000)
+    await setTimeout(
+      () => this.setState({ gameDemoStats: kittyHasEaten }),
+      8000
+    );
   };
 
   moveKittyLeft = () => {
@@ -65,6 +72,13 @@ class App extends Component {
     });
   };
 
+  buyFood = () => {
+    const withExtraFood = Object.assign(this.state.gameDemoStats, {
+      foodStock: this.state.gameDemoStats.foodStock + 1
+    });
+    this.setState({ gameDemoStats: withExtraFood });
+  };
+
   render() {
     return (
       <div className="App">
@@ -77,6 +91,7 @@ class App extends Component {
           moveKittyRight={this.moveKittyRight}
           kittyPosition={this.state.kittyPosition}
           gameDemoStats={this.state.gameDemoStats}
+          buyFood={this.buyFood}
         />
         <h1>Make your kitty your pet.</h1>
       </div>
