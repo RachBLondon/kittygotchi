@@ -4,6 +4,67 @@ import Toy from "./Toy";
 import CatFood from "./CatFood";
 
 export default class Game extends Component {
+  state = {
+    feedingKitty: { started: false, shakeFood: true },
+    kittyPosition: 0,
+    gameDemoStats: {
+      foodStock: 0,
+      age: 0,
+      plays: 0,
+      hungry: true
+    },
+    warning : ""
+  };
+
+    // TODO switch setTimeouts to use call backs
+  feedKitty = async () => {
+    if(this.state.gameDemoStats.foodStock < 1){
+      return this.setState({warning : "Buy more food"})
+    }
+    const newFoodLevel = Object.assign(this.state.gameDemoStats, {}, {foodStock : this.state.gameDemoStats.foodStock - 1})
+    this.setState({ feedingKitty: { started: true } });
+    setTimeout(
+      () => this.setState({ feedingKitty: { pourFood: true, started: true }, gameDemoStats : newFoodLevel }),
+      1000
+    );
+    const kittyHasEaten = Object.assign(this.state.gameDemoStats, {
+      hungry: false
+    });
+
+    setTimeout(() => this.setState({ feedingKitty: {} }), 2500);
+    await setTimeout(
+      () => this.setState({ gameDemoStats: kittyHasEaten }),
+      8000
+    );
+  };
+
+    //TODO move down to game level
+    moveKittyLeft = () => {
+      this.setState({
+        kittyPosition:
+          this.state.kittyPosition < 5
+            ? this.state.kittyPosition + 1
+            : this.state.kittyPosition
+      });
+    };
+  
+    moveKittyRight = () => {
+      this.setState({
+        kittyPosition:
+          this.state.kittyPosition > -9
+            ? this.state.kittyPosition - 1
+            : this.state.kittyPosition
+      });
+    };
+
+    buyFood = () => {
+      const withExtraFood = Object.assign(this.state.gameDemoStats, {
+        foodStock: this.state.gameDemoStats.foodStock + 1
+      });
+      this.setState({ gameDemoStats: withExtraFood });
+    };
+  
+
   render() {
     return (
       <div style={{ position: "relative" }}>
@@ -22,14 +83,14 @@ export default class Game extends Component {
         >
           <h3>
             Hungry :{" "}
-            {this.props.gameDemoStats.hungry ? "Yes! 😾" : "I'm full 😸"}{" "}
+            {this.state.gameDemoStats.hungry ? "Yes! 😾" : "I'm full 😸"}{" "}
           </h3>
 
-          <h3>Food stock: {this.props.gameDemoStats.foodStock}</h3>
-          <h3>Age: {this.props.gameDemoStats.age}</h3>
+          <h3>Food stock: {this.state.gameDemoStats.foodStock}</h3>
+          <h3>Age: {this.state.gameDemoStats.age}</h3>
           <h3>Days to grow up : 10</h3>
           <h3>Kitty Toys: nones</h3>
-          {/* <h3>Plays: {this.props.gameDemoStats.plays}</h3> */}
+          {/* <h3>Plays: {this.state.gameDemoStats.plays}</h3> */}
         </div>
         <div
           style={{
@@ -39,21 +100,21 @@ export default class Game extends Component {
             margin: "2vh"
           }}
         >
-          <button onClick={this.props.buyFood} className="btn btn-outline-success">Buy food</button>
+          <button onClick={this.buyFood} className="btn btn-outline-success">Buy food</button>
         </div>
-        {this.props.warning && <h2 style={{position: 'absolute', zIndex : 2, color : 'red'}}>{this.props.warning}</h2>}
+        {this.state.warning && <h2 style={{position: 'absolute', zIndex : 2, color : 'red'}}>{this.state.warning}</h2>}
         <Toy
-          feedKitty={this.props.feedKitty}
-          moveKittyLeft={this.props.moveKittyLeft}
-          moveKittyRight={this.props.moveKittyRight}
+          feedKitty={this.feedKitty}
+          moveKittyLeft={this.moveKittyLeft}
+          moveKittyRight={this.moveKittyRight}
         />
         <div className="kitty-cointainer">
           <img
             src={YellowCat}
             className="kitty"
-            style={{ marginRight: `${this.props.kittyPosition}vw` }}
+            style={{ marginRight: `${this.state.kittyPosition}vw` }}
           />
-          <CatFood feedingKitty={this.props.feedingKitty} />
+          <CatFood feedingKitty={this.state.feedingKitty} />
         </div>
       </div>
     );

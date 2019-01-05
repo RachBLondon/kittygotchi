@@ -12,14 +12,6 @@ class Layout extends Component {
         />
         <div style={{height : '78vh'}}>
           <Game
-            feedKitty={this.props.feedKitty}
-            feedingKitty={this.props.feedingKitty}
-            moveKittyLeft={this.props.moveKittyLeft}
-            moveKittyRight={this.props.moveKittyRight}
-            kittyPosition={this.props.kittyPosition}
-            gameDemoStats={this.props.gameDemoStats}
-            buyFood={this.props.buyFood}
-            warning={this.props.warning}
           />
         </div>
         <div style={{textAlign : 'center'}}>
