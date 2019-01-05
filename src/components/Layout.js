@@ -10,7 +10,7 @@ class Layout extends Component {
           metaMask={this.props.metaMask}
           requestMetaMaskInfo={this.props.requestMetaMaskInfo}
         />
-        <div>
+        <div style={{height : '78vh'}}>
           <Game
             feedKitty={this.props.feedKitty}
             feedingKitty={this.props.feedingKitty}
@@ -19,7 +19,13 @@ class Layout extends Component {
             kittyPosition={this.props.kittyPosition}
             gameDemoStats={this.props.gameDemoStats}
             buyFood={this.props.buyFood}
+            warning={this.props.warning}
           />
+        </div>
+        <div style={{textAlign : 'center'}}>
+          {/* TODO fix so automatically detects metamask */}
+          <button type="button" class="btn btn-primary">Connect MetaMask* to play for real</button>
+          <p>* whats MetaMask?</p>
         </div>
       </div>
     );

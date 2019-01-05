@@ -14,7 +14,8 @@ class App extends Component {
       age: 0,
       plays: 0,
       hungry: true
-    }
+    },
+    warning : ""
   };
 
   componentDidMount() {
@@ -37,6 +38,9 @@ class App extends Component {
 
   //TODO switch setTimeouts to use call backs
   feedKitty = async () => {
+    if(this.state.gameDemoStats.foodStock < 1){
+      return this.setState({warning : "Buy more food"})
+    }
     const newFoodLevel = Object.assign(this.state.gameDemoStats, {}, {foodStock : this.state.gameDemoStats.foodStock - 1})
     this.setState({ feedingKitty: { started: true } });
     setTimeout(
@@ -92,8 +96,8 @@ class App extends Component {
           kittyPosition={this.state.kittyPosition}
           gameDemoStats={this.state.gameDemoStats}
           buyFood={this.buyFood}
+          warning={this.state.warning}
         />
-        <h1>Make your kitty your pet.</h1>
       </div>
     );
   }

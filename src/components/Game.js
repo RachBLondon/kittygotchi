@@ -27,6 +27,8 @@ export default class Game extends Component {
 
           <h3>Food stock: {this.props.gameDemoStats.foodStock}</h3>
           <h3>Age: {this.props.gameDemoStats.age}</h3>
+          <h3>Days to grow up : 10</h3>
+          <h3>Kitty Toys: nones</h3>
           {/* <h3>Plays: {this.props.gameDemoStats.plays}</h3> */}
         </div>
         <div
@@ -39,6 +41,7 @@ export default class Game extends Component {
         >
           <button onClick={this.props.buyFood} className="btn btn-outline-success">Buy food</button>
         </div>
+        {this.props.warning && <h2 style={{position: 'absolute', zIndex : 2, color : 'red'}}>{this.props.warning}</h2>}
         <Toy
           feedKitty={this.props.feedKitty}
           moveKittyLeft={this.props.moveKittyLeft}
